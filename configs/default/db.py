@@ -7,7 +7,7 @@ if os.getenv("DJANGO_ENV") != "ci":
     DATABASES = {
         "default": {
             "ENGINE": "django_prometheus.db.backends.mysql",
-            "NAME": "sspanel",
+            "NAME": os.getenv("MYSQL_NAME", "sspanel"),
             "PASSWORD": os.getenv("MYSQL_PASSWORD", "yourpass"),
             "HOST": os.getenv("MYSQL_HOST", "127.0.0.1"),
             "USER": os.getenv("MYSQL_USER", "root"),
