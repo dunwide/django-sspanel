@@ -10,7 +10,7 @@ COPY pyproject.toml poetry.lock /tmp/
 RUN	pip install -U pip
 
 RUN apk add --update --no-cache mariadb-connector-c-dev tzdata \
-	&& apk add --no-cache --virtual .build-deps mariadb-dev libgcc gcc musl-dev libffi-dev libressl-dev make cargo \
+	&& apk add --no-cache --virtual .build-deps mariadb-dev libgcc gcc musl-dev libffi-dev make cargo \
 	# TODO workaround start
 	&& pip install --no-cache-dir poetry \
     && poetry config virtualenvs.create false \
